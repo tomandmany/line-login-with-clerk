@@ -1,11 +1,12 @@
-// app/page.tsx
+// app/login/page.tsx
+import { SignIn } from '@clerk/nextjs';
 
-import { SignIn } from "@clerk/nextjs";
-
-export default function Page() {
+const SignInPage = () => {
     return (
-        <main>
+        <main className="flex justify-center items-center h-screen">
             <SignIn />
         </main>
     );
-}
+};
+
+export default SignInPage;

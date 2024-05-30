@@ -1,5 +1,11 @@
+// app/page.tsx
+
 import { SignIn } from "@clerk/nextjs";
 
 export default function Page() {
-    return <SignIn />;
+    return (
+        <main>
+            <SignIn />
+        </main>
+    );
 }

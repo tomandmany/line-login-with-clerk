@@ -1,7 +1,10 @@
+// app/layout.tsx
+
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { ClerkProvider, RedirectToSignIn, SignedIn, SignedOut, UserButton } from '@clerk/nextjs'
 import "./globals.css";
+import { jaJP } from "./localization/ja-JP";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,15 +19,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
+    <ClerkProvider localization={jaJP}>
       <html lang="ja">
         <body className={inter.className}>
           <header>
-            <SignedOut>
-              <RedirectToSignIn />
-            </SignedOut>
             <SignedIn>
-              <UserButton />
+              <UserButton afterSignOutUrl="/sign-in" />
             </SignedIn>
           </header>
           <main>

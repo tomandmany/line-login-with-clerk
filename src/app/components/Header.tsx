@@ -3,10 +3,9 @@ import { SignedIn, UserButton } from "@clerk/nextjs";
 export default function Header() {
   return (
     <header>
-        <SignedIn>
+      <SignedIn>
         <UserButton afterSignOutUrl="/sign-in" />
-        {/* <CustomUserButton /> */}
-        </SignedIn>
+      </SignedIn>
     </header>
   )
 }
